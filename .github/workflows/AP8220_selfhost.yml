@@ -1,6 +1,5 @@
 #CI项目
 name: AP8220
-runs-on: self-hosted
 
 #CI计划
 on:
@@ -22,6 +21,7 @@ permissions: write-all
 
 #CI任务
 jobs:
+  runs-on: self-hosted
   config:
     name: ${{matrix.CONFIG}}
     strategy:
