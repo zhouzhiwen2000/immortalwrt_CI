@@ -21,7 +21,6 @@ permissions: write-all
 
 #CI任务
 jobs:
-  runs-on: self-hosted
   config:
     name: ${{matrix.CONFIG}}
     strategy:
@@ -34,6 +33,7 @@ jobs:
 
     #调用公用编译核心WRT-CORE.yml
     uses: ./.github/workflows/WRT-CORE.yml
+    runs-on: self-hosted
     with:
       #编译配置
       WRT_CONFIG: ${{matrix.CONFIG}}
